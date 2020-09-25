@@ -109,8 +109,11 @@ export default async function request(uri: string, config: Config, retry: number
         return '';
     }
 
+    console.log(`requesting [${url.toString()}] . . .`);
+
     const cached = getCache(url, config);
     if (cached) {
+        console.log('loaded from cache');
         return cached;
     }
 
@@ -133,6 +136,7 @@ export default async function request(uri: string, config: Config, retry: number
         : response.data;
 
     setCache(url, data, config);
+    console.log('cached');
 
     return data;
 }

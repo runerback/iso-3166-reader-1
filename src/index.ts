@@ -55,7 +55,8 @@ async function read(): Promise<WorldModel> {
             for (const detail of countryDetailIterator(countryHtml, config)) {
                 continent.countries.push({
                     name: detail.name,
-                    code: detail.data!.code,
+                    code2: countryData.data!.code2,
+                    code3: countryData.data!.code3,
                     flag: await request(new URL(detail.data!.flag, config.rootURL).toString(), config)
                 });
             }

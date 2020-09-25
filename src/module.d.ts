@@ -34,6 +34,7 @@ export interface ContinentModel {
 
 export interface CountryModel {
     readonly name: string;
-    readonly code: string;
+    readonly code2: string;
+    readonly code3: string;
     readonly flag: string; //base64
 }
